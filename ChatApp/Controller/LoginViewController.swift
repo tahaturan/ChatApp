@@ -7,11 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+    //MARK: - Properties
+    
+    
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+       
     }
 
 
