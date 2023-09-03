@@ -12,6 +12,9 @@
 		5F979C392AA2CB3A00F46F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F979C382AA2CB3A00F46F2B /* Assets.xcassets */; };
 		5F979C3C2AA2CB3A00F46F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F979C3A2AA2CB3A00F46F2B /* LaunchScreen.storyboard */; };
 		5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CEF2AA2D5C500F078F8 /* Extension.swift */; };
+		5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF12AA405E500F078F8 /* AppConstants.swift */; };
+		5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */; };
+		5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		5F979C3B2AA2CB3A00F46F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F979C3D2AA2CB3A00F46F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC89CEF2AA2D5C500F078F8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		5FC89CF12AA405E500F078F8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInputView.swift; sourceTree = "<group>"; };
+		5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		5F979C482AA2D08600F46F2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */,
+				5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC89CEF2AA2D5C500F078F8 /* Extension.swift */,
+				5FC89CF12AA405E500F078F8 /* AppConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,7 +201,10 @@
 			files = (
 				5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */,
 				5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */,
+				5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */,
 				5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */,
+				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,
+				5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

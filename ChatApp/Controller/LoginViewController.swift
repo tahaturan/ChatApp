@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         
         // Türkçe: logoImageView'a bir mesaj sembolü ekler.
         // English: Adds a message symbol to logoImageView.
-        imageView.image = UIImage(systemName: "ellipsis.message")
+        imageView.image = UIImage(systemName: K.Icons.logoImage)
         
         // Türkçe: Resmin rengini beyaz olarak ayarlar.
         // English: Sets the color of the image to white.
@@ -32,6 +32,12 @@ class LoginViewController: UIViewController {
         
         return imageView
     }()
+    
+    private let emailTextField: CustomTextField = CustomTextField(placeholderText: "email")
+    
+    private lazy var  emailContainerView: AuthenticationInputView = AuthenticationInputView(imageString: K.Icons.mailIcon, textField: emailTextField)
+    
+    
     
     //MARK: - LifeCycle
 
@@ -58,13 +64,14 @@ extension LoginViewController {
         // Türkçe: logoImageView'un otomatik boyutlandırmayı devre dışı bırakır.
         // English: Disables automatic resizing for logoImageView.
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        emailContainerView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func layout() {
         // Türkçe: LogoImageView'u ana görünüme ekler.
         // English: Adds logoImageView to the main view.
         view.addSubview(logoImageView)
-        
+        view.addSubview(emailContainerView)
         NSLayoutConstraint.activate([
             // Türkçe: LogoImageView'un üst kenarını güvenli alanın üst kenarına 16 birim uzaklıkta konumlandırır.
             // English: Positions logoImageView 16 units below the top edge of the safe area.
@@ -72,15 +79,22 @@ extension LoginViewController {
             
             // Türkçe: LogoImageView'un yüksekliğini 150 birime sabitler.
             // English: Sets the height of logoImageView to 150 units.
-            logoImageView.heightAnchor.constraint(equalToConstant: 150),
+            logoImageView.heightAnchor.constraint(equalToConstant: K.Size.logoHeight),
             
             // Türkçe: LogoImageView'un genişliğini 150 birime sabitler.
             // English: Sets the width of logoImageView to 150 units.
-            logoImageView.widthAnchor.constraint(equalToConstant: 150),
+            logoImageView.widthAnchor.constraint(equalToConstant: K.Size.logoWidth),
 
             // Türkçe: LogoImageView'u ana görünümün ortasına hizalar.
             // English: Centers logoImageView horizontally in the main view.
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            //EmailContainerView
+            emailContainerView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor , constant: 16),
+            emailContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            emailContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            emailContainerView.heightAnchor.constraint(equalToConstant: K.Size.emailContainerViewHeight)
+           
         ])
     }
 }
