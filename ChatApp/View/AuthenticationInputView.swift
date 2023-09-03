@@ -12,8 +12,7 @@ class AuthenticationInputView: UIView {
         
         // Set the background color of the view.
         // Görünümün arka plan rengini ayarlar.
-        backgroundColor = .white
-        
+        backgroundColor = K.Colors.superSilver
         // Round the corners of the view.
         // Görünümün köşelerini yuvarlatır.
         layer.cornerRadius = K.Size.emailContainerViewHeight / 2

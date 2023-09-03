@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTextField: UITextField {
     
-    init(placeholderText: String) {
+    init(placeholderText: String , isSecureText: Bool = false) {
         super.init(frame: .zero)
         
         attributedPlaceholder = NSMutableAttributedString(string: placeholderText, attributes: [
@@ -19,6 +19,7 @@ class CustomTextField: UITextField {
         
         borderStyle = .none
         textColor = .black
+        isSecureTextEntry = isSecureText
     }
     
     required init?(coder: NSCoder) {
