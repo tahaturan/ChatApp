@@ -15,6 +15,7 @@
 		5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF12AA405E500F078F8 /* AppConstants.swift */; };
 		5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */; };
 		5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */; };
+		5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5FC89CF12AA405E500F078F8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInputView.swift; sourceTree = "<group>"; };
 		5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		5F979C492AA2D08F00F46F2B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */,
 				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,
 				5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */,
+				5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

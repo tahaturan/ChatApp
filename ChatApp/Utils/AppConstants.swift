@@ -22,6 +22,7 @@ struct K {
         static let mailIcon: String = "envelope"
         static let lockIcon: String = "lock"
         static let eyeIcon: String = "eye"
+        static let eyeSlash: String = "eye.slash"
     }
     
     struct Colors {

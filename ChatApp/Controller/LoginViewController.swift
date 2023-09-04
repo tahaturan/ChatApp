@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     //MARK: - Properties
+    private var viewModel = LoginViewModel()
     
     // Türkçe: Logo görüntüsünü tutmak için özel bir UIImageView oluşturur.
     // English: Creates a custom UIImageView to hold the logo image.
@@ -47,7 +48,7 @@ class LoginViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = K.Colors.darkDenimBlue
+        button.backgroundColor = K.Colors.bondi
         button.layer.cornerRadius = K.Size.emailContainerViewHeight / 3
         button.isEnabled = false
         return button
@@ -72,8 +73,30 @@ class LoginViewController: UIViewController {
     }
 }
 
+//MARK: - Selector
+extension LoginViewController {
+    @objc func handleTextFieldChange(_ sender: UITextField){
+        if sender == emailTextField {
+            viewModel.emailTextFieldText = sender.text
+        }else{
+            viewModel.passwordTextFieldText = sender.text
+        }
+        
+        loginButtonStatus()
+    }
+}
+
 //MARK: - Helper
 extension LoginViewController {
+    private func loginButtonStatus(){
+        if viewModel.status {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = K.Colors.darkDenimBlue
+        }else{
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = K.Colors.bondi
+        }
+    }
     private func style() {
         self.navigationController?.navigationBar.isHidden = true
         // Türkçe: logoImageView'un otomatik boyutlandırmayı devre dışı bırakır.
@@ -86,6 +109,9 @@ extension LoginViewController {
         stackView.spacing = 16
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        //Email & PasswordTextfield
+        emailTextField.addTarget(self, action: #selector(handleTextFieldChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(handleTextFieldChange), for: .editingChanged)
     }
     
     private func layout() {
