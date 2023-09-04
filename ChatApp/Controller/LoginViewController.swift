@@ -110,7 +110,7 @@ extension LoginViewController {
             // English: Centers logoImageView horizontally in the main view.
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            //EmailContainerView
+            //stackView & EmailContainerView
             stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor , constant: 64),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),

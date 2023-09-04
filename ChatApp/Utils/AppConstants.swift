@@ -21,6 +21,7 @@ struct K {
         static let logoImage: String = "ellipsis.message"
         static let mailIcon: String = "envelope"
         static let lockIcon: String = "lock"
+        static let eyeIcon: String = "eye"
     }
     
     struct Colors {

@@ -33,6 +33,8 @@ class AuthenticationInputView: UIView {
         // UIImageView'in resmini sağlanan sembol adına (örneğin, "imageString") göre ayarlar.
         imageView.image = UIImage(systemName: imageString)
         
+        imageView.tintColor = K.Colors.darkDenimBlue
+        
         // Disable automatic resizing to use custom dimensions.
         // Özel boyutları kullanmak için otomatik boyutlandırmayı devre dışı bırakır.
         imageView.translatesAutoresizingMaskIntoConstraints = false
