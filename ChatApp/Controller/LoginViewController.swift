@@ -75,24 +75,37 @@ class LoginViewController: UIViewController {
 
 //MARK: - Selector
 extension LoginViewController {
+    // Kullanıcı e-posta veya şifre giriş alanındaki metni değiştirdiğinde, bu işlev tetiklenir ve değişikliği ViewModel'a ileterek günceller.
+    // When the user changes the text in either the email or password input field, this function is triggered, updating the ViewModel with the change.
     @objc func handleTextFieldChange(_ sender: UITextField){
         if sender == emailTextField {
+            // Türkçe: E-posta giriş alanındaki metni ViewModel'a ileterek günceller.
+            // English: Updates the ViewModel with the text in the email input field.
             viewModel.emailTextFieldText = sender.text
-        }else{
+        } else {
+            // Türkçe: Şifre giriş alanındaki metni ViewModel'a ileterek günceller.
+            // English: Updates the ViewModel with the text in the password input field.
             viewModel.passwordTextFieldText = sender.text
         }
         
+        // Türkçe: Giriş düğmesinin durumunu günceller.
+        // English: Updates the status of the login button.
         loginButtonStatus()
     }
+
 }
 
 //MARK: - Helper
 extension LoginViewController {
-    private func loginButtonStatus(){
+    private func loginButtonStatus() {
+        // Türkçe: ViewModel'deki durumu kontrol eder ve giriş düğmesini etkinleştirip arka plan rengini uygun şekilde günceller.
+        // English: Checks the state in the ViewModel and enables or disables the login button while updating its background color accordingly.
         if viewModel.status {
             loginButton.isEnabled = true
             loginButton.backgroundColor = K.Colors.darkDenimBlue
-        }else{
+        } else {
+            // Türkçe: Eğer ViewModel'deki durum "false" ise, giriş düğmesini devre dışı bırakır ve arka plan rengini "K.Colors.bondi" olarak ayarlar.
+            // English: If the state in the ViewModel is "false," it disables the login button and sets its background color to "K.Colors.bondi."
             loginButton.isEnabled = false
             loginButton.backgroundColor = K.Colors.bondi
         }
@@ -110,8 +123,14 @@ extension LoginViewController {
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         //Email & PasswordTextfield
+        // Kullanıcı e-posta giriş alanındaki metni değiştirdiğinde, "handleTextFieldChange" işlevini tetiklemek için "emailTextField" öğesine bir hedef (target) ekleriz.
+        // When the user changes the text in the email input field, we add a target to the "emailTextField" element to trigger the "handleTextFieldChange" function.
         emailTextField.addTarget(self, action: #selector(handleTextFieldChange), for: .editingChanged)
+
+        // Kullanıcı şifre giriş alanındaki metni değiştirdiğinde, "handleTextFieldChange" işlevini tetiklemek için "passwordTextField" öğesine bir hedef (target) ekleriz.
+        // When the user changes the text in the password input field, we add a target to the "passwordTextField" element to trigger the "handleTextFieldChange" function.
         passwordTextField.addTarget(self, action: #selector(handleTextFieldChange), for: .editingChanged)
+
     }
     
     private func layout() {
