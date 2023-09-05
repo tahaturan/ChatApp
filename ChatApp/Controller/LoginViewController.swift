@@ -54,6 +54,17 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private lazy var switchToRegistrationPage: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "Click To Become a Member" , attributes: [
+            .foregroundColor: K.Colors.nileStone,
+            .font: UIFont.boldSystemFont(ofSize: 14)
+        ])
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(handleGoToRegisterView), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -92,7 +103,11 @@ extension LoginViewController {
         // English: Updates the status of the login button.
         loginButtonStatus()
     }
-
+    
+    @objc private func handleGoToRegisterView() {
+        let controller = RegisterViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 //MARK: - Helper
@@ -122,6 +137,7 @@ extension LoginViewController {
         stackView.spacing = 16
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         //Email & PasswordTextfield
         // Kullanıcı e-posta giriş alanındaki metni değiştirdiğinde, "handleTextFieldChange" işlevini tetiklemek için "emailTextField" öğesine bir hedef (target) ekleriz.
         // When the user changes the text in the email input field, we add a target to the "emailTextField" element to trigger the "handleTextFieldChange" function.
@@ -130,6 +146,9 @@ extension LoginViewController {
         // Kullanıcı şifre giriş alanındaki metni değiştirdiğinde, "handleTextFieldChange" işlevini tetiklemek için "passwordTextField" öğesine bir hedef (target) ekleriz.
         // When the user changes the text in the password input field, we add a target to the "passwordTextField" element to trigger the "handleTextFieldChange" function.
         passwordTextField.addTarget(self, action: #selector(handleTextFieldChange), for: .editingChanged)
+        
+        //switchToRegistrationPage
+        switchToRegistrationPage.translatesAutoresizingMaskIntoConstraints = false
 
     }
     
@@ -138,6 +157,7 @@ extension LoginViewController {
         // English: Adds logoImageView to the main view.
         view.addSubview(logoImageView)
         view.addSubview(stackView)
+        view.addSubview(switchToRegistrationPage)
         NSLayoutConstraint.activate([
             // Türkçe: LogoImageView'un üst kenarını güvenli alanın üst kenarına 16 birim uzaklıkta konumlandırır.
             // English: Positions logoImageView 16 units below the top edge of the safe area.
@@ -159,7 +179,13 @@ extension LoginViewController {
             stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor , constant: 64),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            emailContainerView.heightAnchor.constraint(equalToConstant: K.Size.emailContainerViewHeight)
+            emailContainerView.heightAnchor.constraint(equalToConstant: K.Size.emailContainerViewHeight),
+            
+            //switchToRegistrationPage
+            switchToRegistrationPage.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 8),
+            switchToRegistrationPage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            switchToRegistrationPage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32)
+            
            
         ])
     }
