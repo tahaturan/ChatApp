@@ -44,15 +44,7 @@ class LoginViewController: UIViewController {
 
     private var stackView: UIStackView = UIStackView()
     
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(K.StringText.logIn, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = K.Colors.bondi
-        button.layer.cornerRadius = K.Size.emailContainerViewHeight / 3
-        button.isEnabled = false
-        return button
-    }()
+    private let loginButton: CustomButton = CustomButton(title: K.StringText.logIn)
     
     private lazy var switchToRegistrationPage: UIButton = {
         let button = UIButton(type: .system)
