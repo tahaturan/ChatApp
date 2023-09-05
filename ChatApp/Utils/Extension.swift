@@ -14,7 +14,7 @@ extension UIViewController {
     ///   - view: The view to which the gradient layer will be added. // Gradient katmanının ekleneceği görünüm.
     ///   - colors: The list of colors to be used in the gradient. // Gradientte kullanılacak renklerin listesi.
     ///   - locations: The distribution of colors in the gradient. // Gradientin renklerinin dağılımı.
-    func addGradientLayer(to view: UIView, colors: [UIColor] = K.Colors.colorgradiendList, locations: [NSNumber] = [0, 0.6, 0.9, 1]) {
+    func addGradientLayer(to view: UIView, colors: [UIColor] = K.Colors.colorgradiendList, locations: [NSNumber] = K.Colors.colorGradiendLocations) {
         let gradient = CAGradientLayer()
         gradient.locations = locations
         

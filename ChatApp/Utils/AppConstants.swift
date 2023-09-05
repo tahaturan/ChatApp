@@ -31,6 +31,7 @@ struct K {
         static let nileStone: UIColor = UIColor(red: 100/255, green: 204/255, blue: 197/255, alpha: 1)
         static let superSilver: UIColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
         static let colorgradiendList: [UIColor] = [darkDenimBlue, bondi, nileStone, superSilver]
+        static let colorGradiendLocations: [NSNumber] = [0.3, 0.7, 0.9, 1]
     }
     
     struct StringText {
