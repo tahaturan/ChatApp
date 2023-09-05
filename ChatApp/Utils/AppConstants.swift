@@ -23,6 +23,9 @@ struct K {
         static let lockIcon: String = "lock"
         static let eyeIcon: String = "eye"
         static let eyeSlash: String = "eye.slash"
+        static let photoICon: String = "photo.circle"
+        static let personIcon: String = "person"
+        
     }
     
     struct Colors {
@@ -38,6 +41,9 @@ struct K {
         static let email: String = "Email"
         static let password: String = "Password"
         static let logIn: String = "Log In"
+        static let name: String = "Name"
+        static let userName: String = "User Name"
+        static let register: String = "Register"
     }
     
 }
