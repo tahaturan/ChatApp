@@ -35,18 +35,18 @@ class LoginViewController: UIViewController {
     }()
     
     //Email
-    private let emailTextField: CustomTextField = CustomTextField(placeholderText: "email")
+    private let emailTextField: CustomTextField = CustomTextField(placeholderText: K.StringText.email)
     private lazy var  emailContainerView: AuthenticationInputView = AuthenticationInputView(imageString: K.Icons.mailIcon, textField: emailTextField)
    
     //Password
-    private let passwordTextField: CustomTextField = CustomTextField(placeholderText: "password" , isSecureText: true)
+    private let passwordTextField: CustomTextField = CustomTextField(placeholderText: K.StringText.password , isSecureText: true)
     private lazy var passwordContainerView: AuthenticationInputView = AuthenticationInputView(imageString: K.Icons.lockIcon, textField: passwordTextField)
 
     private var stackView: UIStackView = UIStackView()
     
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Log In", for: .normal)
+        button.setTitle(K.StringText.logIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = K.Colors.bondi
         button.layer.cornerRadius = K.Size.emailContainerViewHeight / 3

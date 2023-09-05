@@ -33,4 +33,10 @@ struct K {
         static let colorgradiendList: [UIColor] = [darkDenimBlue, bondi, nileStone, superSilver]
     }
     
+    struct StringText {
+        static let email: String = "Email"
+        static let password: String = "Password"
+        static let logIn: String = "Log In"
+    }
+    
 }
