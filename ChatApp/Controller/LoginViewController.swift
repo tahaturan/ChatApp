@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         
         // Türkçe: logoImageView'a bir mesaj sembolü ekler.
         // English: Adds a message symbol to logoImageView.
-        imageView.image = UIImage(systemName: K.Icons.logoImage)
+        imageView.image = UIImage(named: K.Icons.logoImage)
         
         // Türkçe: Resmin rengini beyaz olarak ayarlar.
         // English: Sets the color of the image to white.

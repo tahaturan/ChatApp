@@ -18,13 +18,14 @@ struct K {
     }
     
     struct Icons {
-        static let logoImage: String = "ellipsis.message"
-        static let mailIcon: String = "envelope"
-        static let lockIcon: String = "lock"
+        static let logoImage: String = "logoIcon"
+        static let mailIcon: String = "email"
+        static let lockIcon: String = "padlock"
         static let eyeIcon: String = "eye"
         static let eyeSlash: String = "eye.slash"
-        static let photoICon: String = "photo.circle"
-        static let personIcon: String = "person"
+        static let cameraICon: String = "camera"
+        static let personIcon: String = "user"
+        static let memberShip: String = "membership"
         
     }
     
