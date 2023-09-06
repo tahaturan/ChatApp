@@ -39,14 +39,14 @@ struct K {
     }
     
     struct StringText {
-        static let email: String = "Email"
-        static let password: String = "Password"
-        static let logIn: String = "Log In"
-        static let name: String = "Name"
-        static let userName: String = "User Name"
-        static let register: String = "Register"
-        static let loginToRegisterView: String = "Click To Become a Member"
-        static let loginPage: String = "If you are a member, Login Page"
+        static let email = NSLocalizedString("Email", comment: "")
+        static let password = NSLocalizedString("Password", comment: "")
+        static let logIn = NSLocalizedString("Log In", comment: "")
+        static let name = NSLocalizedString("Name", comment: "")
+        static let userName = NSLocalizedString("User Name", comment: "")
+        static let register = NSLocalizedString("Register", comment: "")
+        static let loginToRegisterView = NSLocalizedString("Click To Become a Member", comment: "")
+        static let loginPage = NSLocalizedString("If you are a member, Login Page", comment: "")
     }
     
 }

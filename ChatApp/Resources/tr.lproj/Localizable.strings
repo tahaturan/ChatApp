@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  ChatApp
+
+  Created by Taha Turan on 6.09.2023.
+  
+*/
+
+/* Email */
+"Email" = "E-posta";
+
+/* Password */
+"Password" = "Şifre";
+
+/* Log In */
+"Log In" = "Giriş Yap";
+
+/* Name */
+"Name" = "Ad";
+
+/* User Name */
+"User Name" = "Kullanıcı Adı";
+
+/* Register */
+"Register" = "Kayıt Ol";
+
+/* Click To Become a Member */
+"Click To Become a Member" = "Üye Olmak İçin Tıklayın";
+
+/* If you are a member, Login Page */
+"If you are a member, Login Page" = "Üyeyseniz, Giriş Sayfasına Gidin";

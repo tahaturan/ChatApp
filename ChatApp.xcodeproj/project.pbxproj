@@ -20,6 +20,7 @@
 		5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B702AA7DCB700F8104D /* CustomButton.swift */; };
 		5FFC3B732AA7FB4600F8104D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */; };
 		5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B742AA815C300F8104D /* CustomAttributedButton.swift */; };
+		5FFC3B7A2AA847BC00F8104D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FFC3B792AA847BC00F8104D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5FFC3B702AA7DCB700F8104D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		5FFC3B742AA815C300F8104D /* CustomAttributedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAttributedButton.swift; sourceTree = "<group>"; };
+		5FFC3B792AA847BC00F8104D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,16 +150,17 @@
 		5FFC3B762AA845B800F8104D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5FFC3B782AA8460F00F8104D /* tr */,
+				5FFC3B782AA8460F00F8104D /* tr.lproj */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		5FFC3B782AA8460F00F8104D /* tr */ = {
+		5FFC3B782AA8460F00F8104D /* tr.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				5FFC3B792AA847BC00F8104D /* Localizable.strings */,
 			);
-			path = tr;
+			path = tr.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F979C3C2AA2CB3A00F46F2B /* LaunchScreen.storyboard in Resources */,
+				5FFC3B7A2AA847BC00F8104D /* Localizable.strings in Resources */,
 				5F979C392AA2CB3A00F46F2B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
