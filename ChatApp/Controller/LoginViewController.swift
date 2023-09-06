@@ -42,20 +42,17 @@ class LoginViewController: UIViewController {
     private let passwordTextField: CustomTextField = CustomTextField(placeholderText: K.StringText.password , isSecureText: true)
     private lazy var passwordContainerView: AuthenticationInputView = AuthenticationInputView(imageString: K.Icons.lockIcon, textField: passwordTextField)
 
+    //StackView
     private var stackView: UIStackView = UIStackView()
     
+    //LoginButton
     private let loginButton: CustomButton = CustomButton(title: K.StringText.logIn)
     
-    private lazy var switchToRegistrationPage: UIButton = {
-        let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Click To Become a Member" , attributes: [
-            .foregroundColor: K.Colors.nileStone,
-            .font: UIFont.boldSystemFont(ofSize: 14)
-        ])
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(handleGoToRegisterView), for: .touchUpInside)
-        return button
-    }()
+    //NavigateButton
+    private lazy var switchToRegistrationPage: CustomAttributedButton = CustomAttributedButton(title: K.StringText.loginToRegisterView) {
+        let controller = RegisterViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     //MARK: - LifeCycle
 
@@ -95,11 +92,6 @@ extension LoginViewController {
         // English: Updates the status of the login button.
         loginButtonStatus()
     }
-    
-    @objc private func handleGoToRegisterView() {
-        let controller = RegisterViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
 }
 
 //MARK: - Helper
@@ -117,6 +109,7 @@ extension LoginViewController {
             loginButton.backgroundColor = K.Colors.bondi
         }
     }
+    
     private func style() {
         self.navigationController?.navigationBar.isHidden = true
         // Türkçe: logoImageView'un otomatik boyutlandırmayı devre dışı bırakır.
@@ -143,7 +136,6 @@ extension LoginViewController {
         switchToRegistrationPage.translatesAutoresizingMaskIntoConstraints = false
 
     }
-    
     private func layout() {
         // Türkçe: LogoImageView'u ana görünüme ekler.
         // English: Adds logoImageView to the main view.

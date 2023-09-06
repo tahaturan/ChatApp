@@ -45,6 +45,7 @@ struct K {
         static let name: String = "Name"
         static let userName: String = "User Name"
         static let register: String = "Register"
+        static let loginToRegisterView: String = "Click To Become a Member"
     }
     
 }
