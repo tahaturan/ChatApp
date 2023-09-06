@@ -14,13 +14,14 @@ class RegisterViewController: UIViewController {
     private var viewModel: RegisterViewModel = RegisterViewModel()
     
     //addCameraButton
-    private let addCameraButton: UIButton = {
+    private lazy var addCameraButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = K.Colors.superSilver
         let buttonImage: UIImage = UIImage(named: K.Icons.cameraICon)!
         button.setImage(buttonImage, for: .normal)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
+        button.addTarget(self, action: #selector(handlePhoto), for: .touchUpInside)
    
         return button
     }()
@@ -63,7 +64,6 @@ class RegisterViewController: UIViewController {
 }
 
 //MARK: - Helper
-
 extension RegisterViewController {
     //Setup Style
     private func style() {
@@ -143,5 +143,27 @@ extension RegisterViewController {
         }
         
         registerButtonStatus()
+    }
+    
+    //HandlePhoto
+    @objc private func handlePhoto(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        self.present(picker, animated: true)
+        
+    }
+}
+
+//MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        addCameraButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        addCameraButton.layer.cornerRadius = K.Size.logoHeight / 2
+        addCameraButton.clipsToBounds = true
+        addCameraButton.layer.borderColor = K.Colors.superSilver.cgColor
+        addCameraButton.layer.borderWidth = 3
+        addCameraButton.contentMode = .scaleAspectFill
+        dismiss(animated: true)
     }
 }

@@ -77,6 +77,7 @@
 				5F979C4A2AA2D0A000F46F2B /* Service */,
 				5F979C4B2AA2D0AA00F46F2B /* Utils */,
 				5F979C452AA2CFE600F46F2B /* Files */,
+				5FFC3B762AA845B800F8104D /* Resources */,
 				5F979C3D2AA2CB3A00F46F2B /* Info.plist */,
 			);
 			path = ChatApp;
@@ -142,6 +143,21 @@
 				5FC89CF12AA405E500F078F8 /* AppConstants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5FFC3B762AA845B800F8104D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FFC3B782AA8460F00F8104D /* tr */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5FFC3B782AA8460F00F8104D /* tr */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
