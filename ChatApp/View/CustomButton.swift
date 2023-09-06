@@ -9,15 +9,23 @@ import UIKit
 
 class CustomButton: UIButton {
     
-    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white , font: UIFont.TextStyle = .title3) {
+    private var action: (() -> Void)?
+    
+    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white , font: UIFont.TextStyle = .title3, action: (() -> Void)?) {
         super.init(frame: .zero)
         
+        self.action = action
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = color
         layer.cornerRadius = K.Size.emailContainerViewHeight / 3
         isEnabled = enabled
         titleLabel?.font = UIFont.preferredFont(forTextStyle: font)
+        addTarget(self, action: #selector(handleButtonAction), for: .touchUpInside)
+    }
+    
+    @objc private func handleButtonAction() {
+        action?()
     }
     
     required init?(coder: NSCoder) {
