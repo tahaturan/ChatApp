@@ -9,7 +9,7 @@ import UIKit
 
 class CustomButton: UIButton {
     
-    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white) {
+    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white , font: UIFont.TextStyle = .title3) {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
@@ -17,6 +17,7 @@ class CustomButton: UIButton {
         backgroundColor = color
         layer.cornerRadius = K.Size.emailContainerViewHeight / 3
         isEnabled = enabled
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: font)
     }
     
     required init?(coder: NSCoder) {

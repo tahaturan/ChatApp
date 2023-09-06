@@ -18,6 +18,8 @@
 		5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */; };
 		5FFC3B6F2AA7D0BB00F8104D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B6E2AA7D0BB00F8104D /* RegisterViewController.swift */; };
 		5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B702AA7DCB700F8104D /* CustomButton.swift */; };
+		5FFC3B732AA7FB4600F8104D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */; };
+		5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B742AA815C300F8104D /* CustomAttributedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5FFC3B6E2AA7D0BB00F8104D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5FFC3B702AA7DCB700F8104D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		5FFC3B742AA815C300F8104D /* CustomAttributedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAttributedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */,
 				5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */,
 				5FFC3B702AA7DCB700F8104D /* CustomButton.swift */,
+				5FFC3B742AA815C300F8104D /* CustomAttributedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */,
+				5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,11 +215,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */,
+				5FFC3B732AA7FB4600F8104D /* RegisterViewModel.swift in Sources */,
 				5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */,
 				5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */,
 				5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */,
 				5FFC3B6F2AA7D0BB00F8104D /* RegisterViewController.swift in Sources */,
 				5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */,
+				5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */,
 				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,
 				5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */,
 				5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */,
