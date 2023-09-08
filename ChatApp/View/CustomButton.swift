@@ -11,7 +11,7 @@ class CustomButton: UIButton {
     
     private var action: (() -> Void)?
     
-    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white , font: UIFont.TextStyle = .title3, action: (() -> Void)?) {
+    init(title: String, enabled: Bool = true , color: UIColor = K.Colors.bondi, titleColor: UIColor = .white , font: UIFont.TextStyle = .title3, action: (() -> Void)? = nil) {
         super.init(frame: .zero)
         
         self.action = action

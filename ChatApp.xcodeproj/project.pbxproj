@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F7C425B2AA9644D00AE6AC3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */; };
 		5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C2F2AA2CB3900F46F2B /* AppDelegate.swift */; };
 		5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C332AA2CB3900F46F2B /* LoginViewController.swift */; };
 		5F979C392AA2CB3A00F46F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F979C382AA2CB3A00F46F2B /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		5F979C2C2AA2CB3900F46F2B /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F979C2F2AA2CB3900F46F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F979C332AA2CB3900F46F2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		5F979C4A2AA2D0A000F46F2B /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */,
 				5FFC3B732AA7FB4600F8104D /* RegisterViewModel.swift in Sources */,
 				5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */,
+				5F7C425B2AA9644D00AE6AC3 /* AuthenticationService.swift in Sources */,
 				5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */,
 				5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */,
 				5FFC3B6F2AA7D0BB00F8104D /* RegisterViewController.swift in Sources */,

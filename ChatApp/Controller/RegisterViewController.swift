@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
 
 class RegisterViewController: UIViewController {
     
     //MARK: - Properties
     //viewModel
     private var viewModel: RegisterViewModel = RegisterViewModel()
+    
+    //Upload Image
+    private var profileImageToUpload: UIImage? = nil
     
     //addCameraButton
     private lazy var addCameraButton: UIButton = {
@@ -43,7 +49,7 @@ class RegisterViewController: UIViewController {
     private lazy var passwordContainerView: AuthenticationInputView = AuthenticationInputView(imageString: K.Icons.lockIcon, textField: passwordTextField)
     
     //registerButton
-    private let registerButton: CustomButton = CustomButton(title: K.StringText.register , enabled: false , font: .title2)
+    private lazy var registerButton: CustomButton = CustomButton(title: K.StringText.register , enabled: false , font: .title2, action: handleRegisterButton)
 
     //StackView
     private var stackView: UIStackView = UIStackView()
@@ -126,6 +132,25 @@ extension RegisterViewController {
             registerButton.backgroundColor = K.Colors.bondi
         }
     }
+    
+    //handleRegisterButton
+    func handleRegisterButton() {
+        guard let emailText = emailTextField.text else { return }
+        guard let nameText = nameTextField.text else { return }
+        guard let userNameText = userNameTextField.text else { return }
+        guard let passwordText = passwordTextField.text else { return }
+        guard let profileImage = profileImageToUpload else { return }
+        
+        let user = UserModel(emailText: emailText, nameText: nameText, userNameText: userNameText, passwordText: passwordText)
+        
+        AuthenticationService.register(withUser: user, image: profileImage) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+        }
+print("basildi")
+    }
 }
 
 //MARK: - Selector
@@ -158,6 +183,7 @@ extension RegisterViewController {
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
+        self.profileImageToUpload = image
         addCameraButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
         addCameraButton.layer.cornerRadius = K.Size.logoHeight / 2
         addCameraButton.clipsToBounds = true
