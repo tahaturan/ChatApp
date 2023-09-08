@@ -149,7 +149,7 @@ extension RegisterViewController {
                 return
             }
         }
-print("basildi")
+        self.dismiss(animated: true)
     }
 }
 

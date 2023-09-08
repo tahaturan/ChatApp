@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5131802AABDEB700FF1BF0 /* HomeViewController.swift */; };
 		5F7C425B2AA9644D00AE6AC3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */; };
 		5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C2F2AA2CB3900F46F2B /* AppDelegate.swift */; };
 		5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C332AA2CB3900F46F2B /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F5131802AABDEB700FF1BF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		5F979C2C2AA2CB3900F46F2B /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F979C2F2AA2CB3900F46F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				5F979C332AA2CB3900F46F2B /* LoginViewController.swift */,
 				5FFC3B6E2AA7D0BB00F8104D /* RegisterViewController.swift */,
+				5F5131802AABDEB700FF1BF0 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */,
 				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,
 				5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */,
+				5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */,
 				5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
