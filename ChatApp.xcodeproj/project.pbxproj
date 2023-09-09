@@ -18,6 +18,8 @@
 		5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */; };
 		5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */; };
 		5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */; };
+		5FEBA9E62AABF34C00F5E8A9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEBA9E52AABF34C00F5E8A9 /* AppError.swift */; };
+		5FEBA9E82AABF8B400F5E8A9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEBA9E72AABF8B400F5E8A9 /* UserModel.swift */; };
 		5FFC3B6F2AA7D0BB00F8104D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B6E2AA7D0BB00F8104D /* RegisterViewController.swift */; };
 		5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B702AA7DCB700F8104D /* CustomButton.swift */; };
 		5FFC3B732AA7FB4600F8104D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */; };
@@ -43,6 +45,8 @@
 		5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInputView.swift; sourceTree = "<group>"; };
 		5FC89CF52AA4A7CB00F078F8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5FC89CF72AA5A3A600F078F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5FEBA9E52AABF34C00F5E8A9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		5FEBA9E72AABF8B400F5E8A9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5FFC3B6E2AA7D0BB00F8104D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5FFC3B702AA7DCB700F8104D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5FFC3B722AA7FB4600F8104D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		5F979C472AA2D07C00F46F2B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5FEBA9E72AABF8B400F5E8A9 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			children = (
 				5FC89CEF2AA2D5C500F078F8 /* Extension.swift */,
 				5FC89CF12AA405E500F078F8 /* AppConstants.swift */,
+				5FEBA9E52AABF34C00F5E8A9 /* AppError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,12 +270,14 @@
 				5F7C425B2AA9644D00AE6AC3 /* AuthenticationService.swift in Sources */,
 				5FFC3B712AA7DCB700F8104D /* CustomButton.swift in Sources */,
 				5FC89CF62AA4A7CB00F078F8 /* CustomTextField.swift in Sources */,
+				5FEBA9E62AABF34C00F5E8A9 /* AppError.swift in Sources */,
 				5FFC3B6F2AA7D0BB00F8104D /* RegisterViewController.swift in Sources */,
 				5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */,
 				5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */,
 				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,
 				5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */,
 				5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */,
+				5FEBA9E82AABF8B400F5E8A9 /* UserModel.swift in Sources */,
 				5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

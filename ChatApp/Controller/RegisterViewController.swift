@@ -143,7 +143,7 @@ extension RegisterViewController {
         
         let user = UserModel(emailText: emailText, nameText: nameText, userNameText: userNameText, passwordText: passwordText)
         
-        AuthenticationService.register(withUser: user, image: profileImage) { error in
+        AuthenticationService.registerUser(withUser: user, image: profileImage) { error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return

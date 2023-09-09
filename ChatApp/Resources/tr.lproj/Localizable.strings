@@ -29,3 +29,10 @@
 
 /* If you are a member, Login Page */
 "If you are a member, Login Page" = "Üyeyseniz, Giriş Sayfasına Gidin";
+
+/* App Error Description */
+"ProfileImageCreationError" = "Profil resmi oluşturulamadı.";
+"ImageUploadError" = "Resim yüklenirken bir hata oluştu.";
+"DownloadUrlError" = "Resim indirme URL'si alınamadı.";
+"UserCreationError" = "Kullanıcı oluşturma hatası.";
+"FirestoreError" = "Firestore kayıt işlemi sırasında bir hata oluştu.";
