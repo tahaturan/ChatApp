@@ -30,6 +30,9 @@
 /* If you are a member, Login Page */
 "If you are a member, Login Page" = "Üyeyseniz, Giriş Sayfasına Gidin";
 
+/* Place Wait */
+"Place Wait" = "Lütfen Bekleyin";
+
 /* App Error Description */
 "ProfileImageCreationError" = "Profil resmi oluşturulamadı.";
 "ImageUploadError" = "Resim yüklenirken bir hata oluştu.";

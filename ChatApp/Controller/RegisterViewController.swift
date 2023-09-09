@@ -140,15 +140,19 @@ extension RegisterViewController {
         guard let userNameText = userNameTextField.text else { return }
         guard let passwordText = passwordTextField.text else { return }
         guard let profileImage = profileImageToUpload else { return }
-        
+
         let user = UserModel(emailText: emailText, nameText: nameText, userNameText: userNameText, passwordText: passwordText)
-        
+
+        showProgressHud(showProgress: true)
+
         AuthenticationService.registerUser(withUser: user, image: profileImage) { error in
             if let error = error {
-                print("Error: \(error.localizedDescription)") //erorr icin alert eklenecek
+                print("Error: \(error.localizedDescription)") // erorr icin alert eklenecek
+                self.showProgressHud(showProgress: false)
                 return
             }
         }
+        showProgressHud(showProgress: false)
         self.dismiss(animated: true)
     }
 }

@@ -113,11 +113,15 @@ extension LoginViewController {
     private func handleLoginButton() {
         guard let emailText = emailTextField.text else { return }
         guard let passwordText = passwordTextField.text else { return }
+        showProgressHud(showProgress: true)
         
         AuthenticationService.login(withEmail: emailText, password: passwordText) { error in
             if error != nil {
                 print(error!.localizedDescription) // alert mesaj eklenecek hata durumda
+                self.showProgressHud(showProgress: false)
+                return
             }else{
+                self.showProgressHud(showProgress: false)
                 self.dismiss(animated: true)
             }
         }

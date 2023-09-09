@@ -43,6 +43,7 @@ struct K {
         static let register = NSLocalizedString("Register", comment: "")
         static let loginToRegisterView = NSLocalizedString("Click To Become a Member", comment: "")
         static let loginPage = NSLocalizedString("If you are a member, Login Page", comment: "")
+        static let placeWait = NSLocalizedString("Place Wait", comment: "")
     }
 
     struct AppErrorLocalizedDescription {

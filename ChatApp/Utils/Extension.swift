@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 extension UIViewController {
     ///Adds a gradient layer to a view. // Görünüme bir gradient katmanı ekler.
@@ -30,6 +31,20 @@ extension UIViewController {
         // This line adds the gradient layer beneath the UIView, with 0 indicating it will be at the very bottom.
         view.layer.insertSublayer(gradient, at: 0)
 
+    }
+    
+    
+    // Packages
+
+    func showProgressHud(showProgress: Bool) {
+        DispatchQueue.main.async {
+            let progressHud = JGProgressHUD(style: .dark)
+            progressHud.backgroundColor = K.Colors.bondi.withAlphaComponent(0.6)
+            progressHud.tintColor = K.Colors.darkDenimBlue
+            progressHud.textLabel.text = K.StringText.placeWait
+
+            showProgress ? progressHud.show(in: self.view, animated: true) : progressHud.dismiss(animated: true)
+        }
     }
 
 }
