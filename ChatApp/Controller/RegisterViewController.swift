@@ -67,6 +67,13 @@ class RegisterViewController: UIViewController {
         layout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
 }
 
 //MARK: - Helper
@@ -76,6 +83,7 @@ extension RegisterViewController {
         //view
         addGradientLayer(to: view)
         self.navigationController?.navigationBar.isHidden = true
+        configureSetupKeyboard()
         
         //addCameraButton
         addCameraButton.translatesAutoresizingMaskIntoConstraints = false
@@ -155,6 +163,13 @@ extension RegisterViewController {
         showProgressHud(showProgress: false)
         self.dismiss(animated: true)
     }
+    
+    //Configure Keyboard
+    private func configureSetupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShowNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHideNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }
 
 //MARK: - Selector
@@ -180,6 +195,18 @@ extension RegisterViewController {
         picker.delegate = self
         self.present(picker, animated: true)
         
+    }
+    
+    //Handle Keyboard
+    @objc private func handleKeyboardWillShowNotification() {
+        self.view.frame.origin.y = -130
+    }
+    @objc private func handleKeyboardWillHideNotification() {
+        self.view.frame.origin.y = 0
+    }
+    
+    @objc private func handleTap() {
+        view.endEditing(true)
     }
 }
 
