@@ -145,7 +145,7 @@ extension RegisterViewController {
         
         AuthenticationService.registerUser(withUser: user, image: profileImage) { error in
             if let error = error {
-                print("Error: \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)") //erorr icin alert eklenecek
                 return
             }
         }

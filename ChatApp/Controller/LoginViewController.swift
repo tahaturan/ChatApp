@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
     private var stackView: UIStackView = UIStackView()
     
     //LoginButton
-    private let loginButton: CustomButton = CustomButton(title: K.StringText.logIn)
+    private lazy var loginButton: CustomButton = CustomButton(title: K.StringText.logIn , action: handleLoginButton)
     
     //NavigateButton
     private lazy var switchToRegistrationPage: CustomAttributedButton = CustomAttributedButton(title: K.StringText.loginToRegisterView) {
@@ -109,7 +109,19 @@ extension LoginViewController {
             loginButton.backgroundColor = K.Colors.bondi
         }
     }
-    
+    //handle Login Button
+    private func handleLoginButton() {
+        guard let emailText = emailTextField.text else { return }
+        guard let passwordText = passwordTextField.text else { return }
+        
+        AuthenticationService.login(withEmail: emailText, password: passwordText) { error in
+            if error != nil {
+                print(error!.localizedDescription) // alert mesaj eklenecek hata durumda
+            }else{
+                self.dismiss(animated: true)
+            }
+        }
+    }
     private func style() {
         self.navigationController?.navigationBar.isHidden = true
         // Türkçe: logoImageView'un otomatik boyutlandırmayı devre dışı bırakır.

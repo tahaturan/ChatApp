@@ -36,3 +36,8 @@
 "DownloadUrlError" = "Resim indirme URL'si alınamadı.";
 "UserCreationError" = "Kullanıcı oluşturma hatası.";
 "FirestoreError" = "Firestore kayıt işlemi sırasında bir hata oluştu.";
+"Invalid email format" = "Geçersiz e-posta formatı.";
+"Incorrect password" = "Yanlış şifre.";
+"User not found" = "Kullanıcı bulunamadı.";
+"Network error occurred. Please check your internet connection." = "Ağ hatası oluştu. İnternet bağlantınızı kontrol edin.";
+"An unknown error occurred." = "Bilinmeyen bir hata oluştu.";

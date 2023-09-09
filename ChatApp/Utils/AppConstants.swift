@@ -51,6 +51,11 @@ struct K {
         static let downloadUrlError = NSLocalizedString("DownloadUrlError", comment: "")
         static let userCreationError = NSLocalizedString("UserCreationError", comment: "")
         static let firestoreError = NSLocalizedString("FirestoreError", comment: "")
+        static let invalidEmail = NSLocalizedString("Invalid email format.", comment: "")
+        static let wrongPassword = NSLocalizedString("Incorrect password.", comment: "")
+        static let userNotFound = NSLocalizedString("User not found.", comment: "")
+        static let networkError = NSLocalizedString("Network error occurred. Please check your internet connection.", comment: "")
+        static let unknownErrorMessage = NSLocalizedString("An unknown error occurred.", comment: "")
     }
 
     struct FireBaseConstants {

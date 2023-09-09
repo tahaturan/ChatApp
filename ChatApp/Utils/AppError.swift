@@ -8,6 +8,7 @@
 import Foundation
 
 enum AppError: Error {
+    case signInFailed(String)
     case profileImageCreationError
     case imageUploadError
     case downloadUrlError
@@ -26,6 +27,8 @@ enum AppError: Error {
             return K.AppErrorLocalizedDescription.userCreationError
         case .firestoreError:
             return K.AppErrorLocalizedDescription.firestoreError
+        case .signInFailed(let message):
+            return message
         }
     }
 }
