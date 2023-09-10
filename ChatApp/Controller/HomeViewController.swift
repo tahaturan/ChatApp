@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      signOut()
+      authenticationStatus()
         style()
         layout()
     }
