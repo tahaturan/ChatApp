@@ -22,6 +22,8 @@ class NewMessageViewController: UIViewController {
         divider.backgroundColor = K.Colors.superSilver
         return divider
     }()
+    
+    private let tableView = UITableView()
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,12 +42,21 @@ extension NewMessageViewController {
         view.backgroundColor = K.Colors.bondi
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         dividerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //TableView
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.userCell)
+        tableView.rowHeight = K.Size.tableViewRowHeight
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     //Layout
     private func layout() {
         view.addSubview(titleLabel)
         view.addSubview(dividerView)
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
@@ -54,11 +65,33 @@ extension NewMessageViewController {
             dividerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             dividerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             dividerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dividerView.heightAnchor.constraint(equalToConstant: 0.7)
+            dividerView.heightAnchor.constraint(equalToConstant: 0.7),
+            
+            
+            tableView.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 5),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         ])
     }
-    
-
 }
 
+//MARK: - UITableViewDelegate - UITableViewDelagate
+extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.userCell, for: indexPath)
+        cell.backgroundColor = .green
+        return cell
+    }
+    
+    
+    
+    
+}

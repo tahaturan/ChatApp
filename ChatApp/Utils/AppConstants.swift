@@ -12,6 +12,7 @@ struct K {
         static let logoWidth: CGFloat = 150
         static let logoHeight: CGFloat = 150
         static let emailContainerViewHeight: CGFloat = 50
+        static let tableViewRowHeight: CGFloat = 75
     }
 
     struct Icons {
@@ -78,5 +79,9 @@ struct K {
         struct FirebaseStorageConstans {
             static var profileImagePath: String = "media/profile_image"
         }
+    }
+    
+    struct TableViewCellIdentifier {
+        static let userCell: String = "userCell"
     }
 }
