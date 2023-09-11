@@ -47,6 +47,7 @@ struct K {
         static let loginPage = NSLocalizedString("If you are a member, Login Page", comment: "")
         static let placeWait = NSLocalizedString("Place Wait", comment: "")
         static let chats = NSLocalizedString("Chats", comment: "")
+        static let newChat = NSLocalizedString("New Chat", comment: "")
     }
 
     struct AppErrorLocalizedDescription {

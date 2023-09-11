@@ -72,6 +72,9 @@ extension HomeViewController {
 
 extension HomeViewController {
     @objc private func handleNewMessageButton() {
+        let viewController = NewMessageViewController()
+        present(viewController, animated: true)
+       
     }
 
     @objc private func handleProfileButton() {

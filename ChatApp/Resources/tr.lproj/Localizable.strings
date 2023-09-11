@@ -36,6 +36,9 @@
 /* Chats */
 "Chats" = "Sohbetler";
 
+/* New Chat */
+"New Chat" = "Yeni Sohbet";
+
 /* App Error Description */
 "ProfileImageCreationError" = "Profil resmi oluşturulamadı.";
 "ImageUploadError" = "Resim yüklenirken bir hata oluştu.";
