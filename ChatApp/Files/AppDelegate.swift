@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure the navigation bar appearance
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.backgroundColor = barTintColor
+        navigationBarAppearance.backgroundColor = K.Colors.darkDenimBlue
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor : UIColor.white]
+        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor : UIColor.white]
 
         // Gezinme çubuğu görünümlerini ayarla
         // Set navigation bar appearances

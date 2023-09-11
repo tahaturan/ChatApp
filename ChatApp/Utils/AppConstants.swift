@@ -23,6 +23,8 @@ struct K {
         static let cameraICon: String = "camera"
         static let personIcon: String = "user"
         static let memberShip: String = "membership"
+        static let profileIcon: String = "person"
+        static let newMessageIcon: String = "square.and.pencil"
     }
 
     struct Colors {
@@ -44,6 +46,7 @@ struct K {
         static let loginToRegisterView = NSLocalizedString("Click To Become a Member", comment: "")
         static let loginPage = NSLocalizedString("If you are a member, Login Page", comment: "")
         static let placeWait = NSLocalizedString("Place Wait", comment: "")
+        static let chats = NSLocalizedString("Chats", comment: "")
     }
 
     struct AppErrorLocalizedDescription {

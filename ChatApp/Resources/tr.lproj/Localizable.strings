@@ -33,6 +33,9 @@
 /* Place Wait */
 "Place Wait" = "Lütfen Bekleyin";
 
+/* Chats */
+"Chats" = "Sohbetler";
+
 /* App Error Description */
 "ProfileImageCreationError" = "Profil resmi oluşturulamadı.";
 "ImageUploadError" = "Resim yüklenirken bir hata oluştu.";
