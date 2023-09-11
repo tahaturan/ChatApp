@@ -31,6 +31,12 @@ class NewMessageViewController: UIViewController {
     
         style()
         layout()
+        
+        Service.fetchUsers { users in
+            for user in users {
+                print(user.name)
+            }
+        }
     }
     
 }
@@ -50,6 +56,7 @@ extension NewMessageViewController {
         tableView.rowHeight = K.Size.tableViewRowHeight
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = K.Colors.bondi
     }
     
     //Layout

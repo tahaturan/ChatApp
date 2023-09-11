@@ -149,7 +149,7 @@ extension RegisterViewController {
         guard let passwordText = passwordTextField.text else { return }
         guard let profileImage = profileImageToUpload else { return }
 
-        let user = UserModel(emailText: emailText, nameText: nameText, userNameText: userNameText, passwordText: passwordText)
+        let user = CreateUserModel(emailText: emailText, nameText: nameText, userNameText: userNameText, passwordText: passwordText)
 
         showProgressHud(showProgress: true)
 

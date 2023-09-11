@@ -27,7 +27,7 @@ struct AuthenticationService {
             -  İşlemin sonucunu işlemek için kullanılacak olan kapanış (closure) fonksiyonu. Başarı durumunda Error değeri nil olurken, hata durumunda Error değeri ilgili hatayı tanımlar.
             -  A closure function that will be called when the operation is completed. The closure function is used to handle the result of the operation. In case of success, the Error value is nil, and in case of an error, the Error value defines the specific error.
      */
-    static func registerUser(withUser user: UserModel, image: UIImage, completion: @escaping (AppError?) -> Void) {
+    static func registerUser(withUser user: CreateUserModel, image: UIImage, completion: @escaping (AppError?) -> Void) {
         // Profil resmini yüklemek için ayrı bir fonksiyon çağrılır.
         // A separate function is called to upload the profile image.
         uploadProfileImage(image) { result in
@@ -167,7 +167,7 @@ struct AuthenticationService {
             - İşlemin sonucunu işlemek için kullanılacak olan kapanış (closure) fonksiyonu. Başarı durumunda Error değeri nil olurken, hata durumunda Error değeri ilgili hatayı tanımlar.
             -  A closure function that will be called when the operation is completed. In case of success, it is called with nil, and in case of an error, it is called with an Error object defining the specific error.
      */
-    private static func createUser(withUser user: UserModel, profileImageUrl: String, completion: @escaping (AppError?) -> Void) {
+    private static func createUser(withUser user: CreateUserModel, profileImageUrl: String, completion: @escaping (AppError?) -> Void) {
         Auth.auth().createUser(withEmail: user.emailText, password: user.passwordText) { result, error in
             if error != nil {
                 // Kullanıcı oluşturma hatasıyla karşılaşılırsa ilgili hata döndürülür.
