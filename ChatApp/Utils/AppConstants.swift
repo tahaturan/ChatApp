@@ -13,6 +13,14 @@ struct K {
         static let logoHeight: CGFloat = 150
         static let emailContainerViewHeight: CGFloat = 50
         static let tableViewRowHeight: CGFloat = 75
+        static let newMessageUserProfileWidth: CGFloat = 60
+        static let newMessageUserProfileHeight: CGFloat = 60
+        
+        struct FontSize {
+            static let standart: CGFloat = 20
+            static let small: CGFloat = 12
+            static let large: CGFloat = 24
+        }
     }
 
     struct Icons {

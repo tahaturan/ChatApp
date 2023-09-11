@@ -46,7 +46,7 @@ extension NewMessageViewController {
         //TableView
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.userCell)
+        tableView.register(UserCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.userCell)
         tableView.rowHeight = K.Size.tableViewRowHeight
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,8 +86,8 @@ extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.userCell, for: indexPath)
-        cell.backgroundColor = .green
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.userCell, for: indexPath) as! UserCell
+        
         return cell
     }
     
