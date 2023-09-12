@@ -9,7 +9,11 @@ import UIKit
 
 class UserCell: UITableViewCell {
     // MARK: - Properties
-
+    var user:UserModel? {
+        didSet {
+            configureUserCell()
+        }
+    }
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .cyan
@@ -83,5 +87,12 @@ extension UserCell {
             
         
         ])
+    }
+    
+    private func configureUserCell() {
+        guard let user = user else { return }
+        
+        title.text = user.name
+        subTitle.text = user.username
     }
 }

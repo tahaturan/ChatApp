@@ -24,23 +24,15 @@ class NewMessageViewController: UIViewController {
     }()
     
     private let tableView = UITableView()
+    
+    private var users:[UserModel] = []
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        fetchUsers()
         style()
         layout()
-        
-        Service.fetchUsers { users, error in
-            if error != nil || users == nil {
-                //Error
-            }else {
-                for user in users!{
-                    print(user.name)
-                }
-            }
-        }
     }
     
 }
@@ -61,6 +53,18 @@ extension NewMessageViewController {
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = K.Colors.bondi
+    }
+    
+    //Fetch User
+    private func fetchUsers() {
+        Service.fetchUsers { users, error in
+            if error != nil || users == nil {
+                //Error
+            }else{
+                self.users = users!
+                self.tableView.reloadData()
+            }
+        }
     }
     
     //Layout
@@ -91,14 +95,14 @@ extension NewMessageViewController {
 //MARK: - UITableViewDelegate - UITableViewDelagate
 extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return users.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.userCell, for: indexPath) as! UserCell
-        
+        cell.user = users[indexPath.row]
         return cell
     }
     
