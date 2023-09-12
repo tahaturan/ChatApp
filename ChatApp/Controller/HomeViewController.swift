@@ -11,10 +11,15 @@ import UIKit
 class HomeViewController: UIViewController {
     // MARK: - Properties
 
+    private let newMessageView = NewMessageViewController()
+    private var newMessageButton: UIBarButtonItem = UIBarButtonItem()
+    private var profileButton: UIBarButtonItem = UIBarButtonItem()
+
     // MARK: - Lyfecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newMessageView.delegate = self
         authenticationStatus()
         style()
         layout()
@@ -56,8 +61,8 @@ extension HomeViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
 
-        let newMessageButton = UIBarButtonItem(image: UIImage(systemName: K.Icons.newMessageIcon), style: .plain, target: self, action: #selector(handleNewMessageButton))
-        let profileButton = UIBarButtonItem(image: UIImage(systemName: K.Icons.profileIcon), style: .plain, target: self, action: #selector(handleProfileButton))
+        newMessageButton = UIBarButtonItem(image: UIImage(systemName: K.Icons.newMessageIcon), style: .plain, target: self, action: #selector(handleNewMessageButton))
+        profileButton = UIBarButtonItem(image: UIImage(systemName: K.Icons.profileIcon), style: .plain, target: self, action: #selector(handleProfileButton))
 
         navigationItem.rightBarButtonItem = newMessageButton
         navigationItem.leftBarButtonItem = profileButton
@@ -72,11 +77,18 @@ extension HomeViewController {
 
 extension HomeViewController {
     @objc private func handleNewMessageButton() {
-        let viewController = NewMessageViewController()
-        present(viewController, animated: true)
-       
+        navigationController?.present(newMessageView, animated: true)
     }
 
     @objc private func handleProfileButton() {
+    }
+}
+
+// MARK: - NewMessageViewControllerProtocol
+
+extension HomeViewController: NewMessageViewControllerProtocol {
+    func goToChatView(user: UserModel) {
+        let controller = ChatViewController(user: user)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol NewMessageViewControllerProtocol {
+    func goToChatView(user: UserModel)
+
+}
+
 class NewMessageViewController: UIViewController {
     //MARK: - Properties
+     var delegate: NewMessageViewControllerProtocol?
+    
     private let titleLabel: UILabel = {
        let label = UILabel()
         label.text = K.StringText.newChat
@@ -59,8 +66,9 @@ extension NewMessageViewController {
     private func fetchUsers() {
         Service.fetchUsers { users, error in
             if error != nil || users == nil {
-                //Error
+                return
             }else{
+                
                 self.users = users!
                 self.tableView.reloadData()
             }
@@ -106,7 +114,11 @@ extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        self.delegate?.goToChatView(user: user)
+        dismiss(animated: true)
+    }
     
     
 }
