@@ -26,7 +26,6 @@ class UserCell: UITableViewCell {
     private let title: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: K.Size.FontSize.standart)
-        label.text = "Title"
         label.textColor = K.Colors.superSilver
         return label
     }()
@@ -34,7 +33,6 @@ class UserCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: K.Size.FontSize.small)
         label.textColor = K.Colors.nileStone
-        label.text = "Sub Title"
         return label
     }()
     
@@ -62,6 +60,9 @@ extension UserCell {
         //ProfileImageView
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.layer.cornerRadius = K.Size.newMessageUserProfileHeight / 2
+        profileImageView.layer.borderColor = K.Colors.superSilver.cgColor
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.borderWidth = 1
         
         //StackView
         stackView = UIStackView(arrangedSubviews: [title, subTitle])

@@ -117,6 +117,7 @@ extension NewMessageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         self.delegate?.goToChatView(user: user)
+        tableView.deselectRow(at: indexPath, animated: true)
         dismiss(animated: true)
     }
     
