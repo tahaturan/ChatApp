@@ -19,6 +19,6 @@ struct UserModel {
         self.name = data["name"] as? String ?? ""
         self.username = data["username"] as? String ?? ""
         self.email = data["email"] as? String ?? ""
-        self.profileImage = data["profileImage"] as? String ?? ""
+        self.profileImage = data["profileImageUrl"] as? String ?? ""
     }
 }
