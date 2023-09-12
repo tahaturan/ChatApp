@@ -32,9 +32,13 @@ class NewMessageViewController: UIViewController {
         style()
         layout()
         
-        Service.fetchUsers { users in
-            for user in users {
-                print(user.name)
+        Service.fetchUsers { users, error in
+            if error != nil || users == nil {
+                //Error
+            }else {
+                for user in users!{
+                    print(user.name)
+                }
             }
         }
     }

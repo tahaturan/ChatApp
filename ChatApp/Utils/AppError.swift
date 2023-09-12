@@ -14,7 +14,8 @@ enum AppError: Error {
     case downloadUrlError
     case userCreationError
     case firestoreError
-
+    case userNotFound
+    
     var localizedDescription: String {
         switch self {
         case .profileImageCreationError:
@@ -29,6 +30,8 @@ enum AppError: Error {
             return K.AppErrorLocalizedDescription.firestoreError
         case .signInFailed(let message):
             return message
+        case .userNotFound:
+            return K.AppErrorLocalizedDescription.userNotFound
         }
     }
 }
