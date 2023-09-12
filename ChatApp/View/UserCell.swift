@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserCell: UITableViewCell {
     // MARK: - Properties
@@ -94,5 +95,6 @@ extension UserCell {
         
         title.text = user.name
         subTitle.text = user.username
+        profileImageView.sd_setImage(with: URL(string: user.profileImage))
     }
 }

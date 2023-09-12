@@ -22,6 +22,7 @@
 		5FDB5C692AAECDEA005310AB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB5C682AAECDEA005310AB /* UserCell.swift */; };
 		5FDB5C6B2AAED8C4005310AB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB5C6A2AAED8C4005310AB /* UserModel.swift */; };
 		5FDB5C6D2AAED99A005310AB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDB5C6C2AAED99A005310AB /* Service.swift */; };
+		5FDB5C702AAFF786005310AB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FDB5C6F2AAFF786005310AB /* SDWebImage */; };
 		5FEBA9E62AABF34C00F5E8A9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEBA9E52AABF34C00F5E8A9 /* AppError.swift */; };
 		5FEBA9E82AABF8B400F5E8A9 /* CreateUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEBA9E72AABF8B400F5E8A9 /* CreateUserModel.swift */; };
 		5FEBA9EB2AAC24AC00F5E8A9 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5FEBA9EA2AAC24AC00F5E8A9 /* JGProgressHUD */; };
@@ -73,6 +74,7 @@
 				5FFC3B7F2AA9397C00F8104D /* FirebaseAuth in Frameworks */,
 				5FFC3B812AA9397C00F8104D /* FirebaseFirestore in Frameworks */,
 				5FFC3B832AA9397C00F8104D /* FirebaseStorage in Frameworks */,
+				5FDB5C702AAFF786005310AB /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +221,7 @@
 				5FFC3B802AA9397C00F8104D /* FirebaseFirestore */,
 				5FFC3B822AA9397C00F8104D /* FirebaseStorage */,
 				5FEBA9EA2AAC24AC00F5E8A9 /* JGProgressHUD */,
+				5FDB5C6F2AAFF786005310AB /* SDWebImage */,
 			);
 			productName = ChatApp;
 			productReference = 5F979C2C2AA2CB3900F46F2B /* ChatApp.app */;
@@ -251,6 +254,7 @@
 			packageReferences = (
 				5FFC3B7D2AA9397C00F8104D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5FEBA9E92AAC24AC00F5E8A9 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				5FDB5C6E2AAFF786005310AB /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5F979C2D2AA2CB3900F46F2B /* Products */;
 			projectDirPath = "";
@@ -508,6 +512,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5FDB5C6E2AAFF786005310AB /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		5FEBA9E92AAC24AC00F5E8A9 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
@@ -527,6 +539,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5FDB5C6F2AAFF786005310AB /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FDB5C6E2AAFF786005310AB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		5FEBA9EA2AAC24AC00F5E8A9 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FEBA9E92AAC24AC00F5E8A9 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
