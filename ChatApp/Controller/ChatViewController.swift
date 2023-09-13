@@ -15,6 +15,9 @@ class ChatViewController: UIViewController {
     // ChatTextField
     private let messageTextField: MessageTextField = MessageTextField()
     private lazy var messageContainerView = ChatMessageTextFieldInputView(textField: messageTextField)
+    
+    //TableView
+    private let tableView: UITableView = UITableView()
 
     // MARK: - LyfeCycle
 
@@ -46,20 +49,39 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController {
     private func setupUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
         navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = K.Colors.superSilver
         configureSetupKeyboard()
         messageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //tableView
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.messageCell)
+        tableView.rowHeight = 30
+        tableView.separatorStyle = .none
+
     }
 
     private func layout() {
+        view.addSubview(tableView)
         view.addSubview(messageContainerView)
-
+        
         NSLayoutConstraint.activate([
+            //MessageTextView
             messageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             messageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             messageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             messageContainerView.heightAnchor.constraint(equalToConstant: K.Size.messageContainerViewHeight),
+            messageContainerView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            
+            //TableView
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: messageContainerView.topAnchor)
+            
 
         ])
     }
@@ -86,4 +108,22 @@ extension ChatViewController {
     @objc private func handleTap() {
         view.endEditing(true)
     }
+}
+
+
+//MARK: - UITableViewDelegate/DataSource
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath)
+        cell.backgroundColor = .blue
+        return cell
+    }
+    
+    
 }

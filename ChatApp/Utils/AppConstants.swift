@@ -97,5 +97,6 @@ struct K {
     
     struct TableViewCellIdentifier {
         static let userCell: String = "userCell"
+        static let messageCell: String = "messageCell"
     }
 }
