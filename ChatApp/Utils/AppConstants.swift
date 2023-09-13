@@ -15,6 +15,10 @@ struct K {
         static let tableViewRowHeight: CGFloat = 75
         static let newMessageUserProfileWidth: CGFloat = 60
         static let newMessageUserProfileHeight: CGFloat = 60
+        static let messageIconWithHeight: CGFloat = 30
+        static let messageTextFieldWidth: CGFloat = 300
+        static let messageTextFieldHeight: CGFloat = 40
+        static let messageContainerViewHeight: CGFloat = 100
         
         struct FontSize {
             static let standart: CGFloat = 20
@@ -34,6 +38,7 @@ struct K {
         static let memberShip: String = "membership"
         static let profileIcon: String = "person"
         static let newMessageIcon: String = "square.and.pencil"
+        static let writeIcon: String = "rectangle.and.pencil.and.ellipsis"
     }
 
     struct Colors {
@@ -57,6 +62,7 @@ struct K {
         static let placeWait = NSLocalizedString("Place Wait", comment: "")
         static let chats = NSLocalizedString("Chats", comment: "")
         static let newChat = NSLocalizedString("New Chat", comment: "")
+        static let message = NSLocalizedString("Message...", comment: "")
     }
 
     struct AppErrorLocalizedDescription {

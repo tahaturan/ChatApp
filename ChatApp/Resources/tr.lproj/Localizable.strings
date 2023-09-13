@@ -38,6 +38,8 @@
 
 /* New Chat */
 "New Chat" = "Yeni Sohbet";
+ /* Message... */
+"Message..." = "Mesaj...";
 
 /* App Error Description */
 "ProfileImageCreationError" = "Profil resmi oluşturulamadı.";
