@@ -13,8 +13,7 @@ class ChatViewController: UIViewController {
     private var userModel: UserModel
 
     // ChatTextField
-    private let messageTextField: MessageTextField = MessageTextField()
-    private lazy var messageContainerView = ChatMessageTextFieldInputView(textField: messageTextField)
+    private lazy var messageContainerView = ChatInputView()
     
     //TableView
     private let tableView: UITableView = UITableView()
@@ -49,6 +48,7 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController {
     private func setupUI() {
+        messageContainerView.delagate = self
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.largeTitleDisplayMode = .never
@@ -61,7 +61,7 @@ extension ChatViewController {
         tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.messageCell)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
-        tableView.isScrollEnabled = false
+        
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
 
@@ -119,13 +119,22 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath) as! MessageTableViewCell
         
         return cell
+    }
+    
+    
+}
+
+extension ChatViewController: ChatInputViewProtocol {
+    
+    func sendMessage(_ ChatMessageTextFieldInputView: ChatInputView, message: String) {
+        print("mesaj: \(message)")
     }
     
     

@@ -6,17 +6,41 @@
 //
 
 import UIKit
+protocol ChatInputViewProtocol {
+    func sendMessage(_ ChatMessageTextFieldInputView: ChatInputView, message: String )
+}
 
-class ChatMessageTextFieldInputView: UIView {
-    init(textField: UITextField) {
-        super.init(frame: .zero)
-
-        backgroundColor = K.Colors.darkDenimBlue
+class ChatInputView: UIView {
+    //MARK: - Properties
+    var delagate: ChatInputViewProtocol?
+    private let imageView = UIImageView()
+    private let sendButton = UIButton(type: .system)
+    
+    private let textField: UITextField = {
+       let textField = UITextField()
+        textField.attributedPlaceholder = NSMutableAttributedString(string: K.StringText.message, attributes: [
+            .foregroundColor: K.Colors.superSilver,
+            
+        ])
         
+        textField.borderStyle = .none
+        textField.textColor = K.Colors.superSilver
+        textField.backgroundColor = K.Colors.bondi
+        textField.layer.cornerRadius = K.Size.messageTextFieldHeight / 3
+        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
+        textField.rightView = paddingView
+        textField.rightViewMode = .always
+        return textField
+    }()
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = K.Colors.darkDenimBlue
         tintColor = K.Colors.superSilver
 
         //ImageView
-        let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.image = UIImage(systemName: K.Icons.writeIcon)
@@ -28,10 +52,10 @@ class ChatMessageTextFieldInputView: UIView {
         addSubview(textField)
         
         //Button
-        let sendButton = UIButton(type: .system)
         let sendImage = UIImage(systemName: "paperplane.circle")
         sendButton.setImage(sendImage, for: .normal)
         sendButton.translatesAutoresizingMaskIntoConstraints = false
+        sendButton.addTarget(self, action: #selector(handleSendButton), for: .touchUpInside)
         addSubview(sendButton)
        
 
@@ -59,5 +83,15 @@ class ChatMessageTextFieldInputView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//MARK: - Selector
+extension ChatInputView {
+    @objc private func handleSendButton(_ sender: UIButton) {
+        if textField.text != "" {
+            self.delagate?.sendMessage(self, message: textField.text!)
+            textField.text = ""
+        }
     }
 }
