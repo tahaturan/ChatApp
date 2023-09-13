@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F402CD12AB148D700838254 /* ChatMessageTextFieldInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F402CD02AB148D700838254 /* ChatMessageTextFieldInputView.swift */; };
 		5F402CD32AB1542B00838254 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F402CD22AB1542B00838254 /* MessageTextField.swift */; };
+		5F402CD52AB1AD4700838254 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F402CD42AB1AD4700838254 /* MessageTableViewCell.swift */; };
 		5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5131802AABDEB700FF1BF0 /* HomeViewController.swift */; };
 		5F7C425B2AA9644D00AE6AC3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */; };
 		5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C2F2AA2CB3900F46F2B /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		5F402CD02AB148D700838254 /* ChatMessageTextFieldInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageTextFieldInputView.swift; sourceTree = "<group>"; };
 		5F402CD22AB1542B00838254 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		5F402CD42AB1AD4700838254 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5F5131802AABDEB700FF1BF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5F7C425A2AA9644D00AE6AC3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		5F979C2C2AA2CB3900F46F2B /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				5FDB5C682AAECDEA005310AB /* UserCell.swift */,
 				5F402CD02AB148D700838254 /* ChatMessageTextFieldInputView.swift */,
 				5F402CD22AB1542B00838254 /* MessageTextField.swift */,
+				5F402CD42AB1AD4700838254 /* MessageTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */,
 				5FEBA9E82AABF8B400F5E8A9 /* CreateUserModel.swift in Sources */,
 				5FDB5C6B2AAED8C4005310AB /* UserModel.swift in Sources */,
+				5F402CD52AB1AD4700838254 /* MessageTableViewCell.swift in Sources */,
 				5F402CD32AB1542B00838254 /* MessageTextField.swift in Sources */,
 				5FDB5C722AAFF9D0005310AB /* ChatViewController.swift in Sources */,
 				5FC89CF82AA5A3A600F078F8 /* LoginViewModel.swift in Sources */,

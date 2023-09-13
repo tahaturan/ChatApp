@@ -58,9 +58,12 @@ extension ChatViewController {
         
         //tableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.messageCell)
-        tableView.rowHeight = 30
+        tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.messageCell)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        tableView.isScrollEnabled = false
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
 
     }
 
@@ -120,8 +123,8 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath) as! MessageTableViewCell
+        
         return cell
     }
     

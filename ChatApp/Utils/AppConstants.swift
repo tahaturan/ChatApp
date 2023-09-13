@@ -19,6 +19,8 @@ struct K {
         static let messageTextFieldWidth: CGFloat = 300
         static let messageTextFieldHeight: CGFloat = 40
         static let messageContainerViewHeight: CGFloat = 100
+        static let messageCellProfileImageWidthHeight: CGFloat = 34
+        static let messageCellContainerViewWidth: CGFloat = 300
         
         struct FontSize {
             static let standart: CGFloat = 20
