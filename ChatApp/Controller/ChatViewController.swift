@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ChatViewController: UICollectionViewController {
+class ChatViewController: UIViewController {
     private var userModel: UserModel
 
     init(user: UserModel) {
         userModel = user
-        super.init(collectionViewLayout: UICollectionViewLayout())
-    }
+        super.init(nibName: nil, bundle: nil)    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
