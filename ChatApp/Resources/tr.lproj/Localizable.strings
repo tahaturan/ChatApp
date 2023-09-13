@@ -52,3 +52,4 @@
 "User not found" = "Kullanıcı bulunamadı.";
 "Network error occurred. Please check your internet connection." = "Ağ hatası oluştu. İnternet bağlantınızı kontrol edin.";
 "An unknown error occurred." = "Bilinmeyen bir hata oluştu.";
+"User is not signed in." = "Kullanıcı oturum açmamış.";

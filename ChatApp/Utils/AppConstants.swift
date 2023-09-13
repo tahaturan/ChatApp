@@ -78,11 +78,13 @@ struct K {
         static let userNotFound = NSLocalizedString("User not found.", comment: "")
         static let networkError = NSLocalizedString("Network error occurred. Please check your internet connection.", comment: "")
         static let unknownErrorMessage = NSLocalizedString("An unknown error occurred.", comment: "")
+        static let userSignInFailed = NSLocalizedString("User is not signed in.", comment: "")
     }
 
     struct FireBaseConstants {
         struct FireStoreCollections {
             static let users: String = "users"
+            static let message: String = "messages"
             struct UserDataConstans {
                 static let email: String = "email"
                 static let name: String = "name"

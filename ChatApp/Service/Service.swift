@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseAuth
 import Foundation
 
 struct Service {
@@ -61,6 +62,40 @@ struct Service {
                 // Belirtilen kullanıcı bulunamadı.
                 // The specified user was not found.
                 completion(nil, .userNotFound)
+            }
+        }
+    }
+    /**
+     Mesaj gönderme işlemini gerçekleştirir.
+     
+     - Parameters:
+       - message: Gönderilecek mesaj metni.
+       - toUser: Mesajın gönderileceği kullanıcı modeli.
+       - completion: İşlem tamamlandığında çağrılacak işlem bloğu. Hata durumunda Error nesnesi içerebilir.
+    */
+    static func sendMessage(message: String, toUser: UserModel, completion: @escaping (Error?) -> Void) {
+        guard let currentUid = Auth.auth().currentUser?.uid else {
+            completion(AppError.signInFailed(K.AppErrorLocalizedDescription.userSignInFailed))
+            return
+        }
+        
+        let messageData: [String: Any] = [
+            "text": message,
+            "fromId": currentUid,
+            "toId": toUser.uid,
+            "timestamp": Timestamp(date: Date())
+        ]
+        let messageCollectionPath = K.FireBaseConstants.FireStoreCollections.message
+        let senderPath = "\(messageCollectionPath)/\(currentUid)/\(toUser.uid)"
+        let receiverPath = "\(messageCollectionPath)/\(toUser.uid)/\(currentUid)"
+        
+        Firestore.firestore().collection(senderPath).addDocument(data: messageData) { error in
+            if let error = error {
+                completion(error)
+            } else {
+                Firestore.firestore().collection(receiverPath).addDocument(data: messageData) { error in
+                    completion(error)
+                }
             }
         }
     }

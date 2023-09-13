@@ -134,7 +134,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 extension ChatViewController: ChatInputViewProtocol {
     
     func sendMessage(_ ChatMessageTextFieldInputView: ChatInputView, message: String) {
-        print("mesaj: \(message)")
+        
+        Service.sendMessage(message: message, toUser: userModel) { error in
+            if let error = error {
+                print(error.localizedDescription) // Error alert eklenecek
+                return
+            }
+        }
     }
     
     
