@@ -16,6 +16,7 @@
 		5F979C342AA2CB3900F46F2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F979C332AA2CB3900F46F2B /* LoginViewController.swift */; };
 		5F979C392AA2CB3A00F46F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F979C382AA2CB3A00F46F2B /* Assets.xcassets */; };
 		5F979C3C2AA2CB3A00F46F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F979C3A2AA2CB3A00F46F2B /* LaunchScreen.storyboard */; };
+		5FBFD8292AB2ADCC00ECFE64 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFD8282AB2ADCC00ECFE64 /* MessageModel.swift */; };
 		5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CEF2AA2D5C500F078F8 /* Extension.swift */; };
 		5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF12AA405E500F078F8 /* AppConstants.swift */; };
 		5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */; };
@@ -53,6 +54,7 @@
 		5F979C382AA2CB3A00F46F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F979C3B2AA2CB3A00F46F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F979C3D2AA2CB3A00F46F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FBFD8282AB2ADCC00ECFE64 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		5FC89CEF2AA2D5C500F078F8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5FC89CF12AA405E500F078F8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInputView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				5FEBA9E72AABF8B400F5E8A9 /* CreateUserModel.swift */,
 				5FDB5C6A2AAED8C4005310AB /* UserModel.swift */,
+				5FBFD8282AB2ADCC00ECFE64 /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				5F5131812AABDEB700FF1BF0 /* HomeViewController.swift in Sources */,
 				5FEBA9E82AABF8B400F5E8A9 /* CreateUserModel.swift in Sources */,
 				5FDB5C6B2AAED8C4005310AB /* UserModel.swift in Sources */,
+				5FBFD8292AB2ADCC00ECFE64 /* MessageModel.swift in Sources */,
 				5F402CD52AB1AD4700838254 /* MessageTableViewCell.swift in Sources */,
 				5F402CD32AB1542B00838254 /* MessageTextField.swift in Sources */,
 				5FDB5C722AAFF9D0005310AB /* ChatViewController.swift in Sources */,
