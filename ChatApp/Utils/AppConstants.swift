@@ -85,6 +85,7 @@ struct K {
         struct FireStoreCollections {
             static let users: String = "users"
             static let message: String = "messages"
+            static let lastMessages: String = "last-messages"
             struct UserDataConstans {
                 static let email: String = "email"
                 static let name: String = "name"

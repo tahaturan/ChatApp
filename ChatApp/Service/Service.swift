@@ -86,6 +86,7 @@ struct Service {
             "timestamp": Timestamp(date: Date())
         ]
         let messageCollectionPath = K.FireBaseConstants.FireStoreCollections.message
+        let lastMessagesCollectionPath = K.FireBaseConstants.FireStoreCollections.lastMessages
         let senderPath = "\(messageCollectionPath)/\(currentUid)/\(toUser.uid)"
         let receiverPath = "\(messageCollectionPath)/\(toUser.uid)/\(currentUid)"
         
@@ -95,6 +96,10 @@ struct Service {
             } else {
                 Firestore.firestore().collection(receiverPath).addDocument(data: messageData) { error in
                     completion(error)
+                    
+                    Firestore.firestore().collection(messageCollectionPath).document(currentUid).collection(lastMessagesCollectionPath).document(toUser.uid).setData(messageData)
+                    
+                    Firestore.firestore().collection(messageCollectionPath).document(toUser.uid).collection(lastMessagesCollectionPath).document(currentUid).setData(messageData)
                 }
             }
         }
