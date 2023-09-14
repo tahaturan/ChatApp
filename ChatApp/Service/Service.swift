@@ -99,4 +99,29 @@ struct Service {
             }
         }
     }
+    
+   static func fetchMessages(user: UserModel, compeltion: @escaping ([MessageModel]?, AppError?) -> Void) {
+        var messages: [MessageModel] = []
+        guard let currentUid = Auth.auth().currentUser?.uid else {
+            compeltion(nil, AppError.userNotFound)
+            return
+        }
+        let messageCollectionPath = K.FireBaseConstants.FireStoreCollections.message
+
+        Firestore.firestore().collection(messageCollectionPath).document(currentUid).collection(user.uid).order(by: "timestamp").addSnapshotListener { snapshot, error in
+            if error != nil {
+                compeltion(nil, AppError.firestoreError)
+            } else {
+                if let snapshot = snapshot {
+                    snapshot.documentChanges.forEach { value in
+                        if value.type == .added {
+                            let data = value.document.data()
+                            messages.append(MessageModel(data: data))
+                            compeltion(messages, nil)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

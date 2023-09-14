@@ -21,13 +21,12 @@ class MessageTableViewCell: UITableViewCell {
         containerView.backgroundColor = K.Colors.bondi
         return containerView
     }()
-    private let messageTextView: UITextView = {
+     var messageTextView: UITextView = {
        let textView = UITextView()
         textView.backgroundColor = .clear
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.font = UIFont.preferredFont(forTextStyle: .title3)
-        textView.text =  "deneme"
         textView.textColor = K.Colors.superSilver
         textView.sizeToFit()
 

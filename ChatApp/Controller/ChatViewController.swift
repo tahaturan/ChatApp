@@ -11,6 +11,7 @@ class ChatViewController: UIViewController {
     // MARK: - Properties
 
     private var userModel: UserModel
+    var messages: [MessageModel] = []
 
     // ChatTextField
     private lazy var messageContainerView = ChatInputView()
@@ -30,6 +31,7 @@ class ChatViewController: UIViewController {
 
         setupUI()
         layout()
+        fetchMessages()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -119,12 +121,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return self.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath) as! MessageTableViewCell
-        
+        let message = messages[indexPath.row]
+        cell.messageTextView.text = message.text
         return cell
     }
     
@@ -142,6 +145,20 @@ extension ChatViewController: ChatInputViewProtocol {
             }
         }
     }
-    
-    
+}
+
+//MARK: - Service
+extension ChatViewController {
+    private func fetchMessages() {
+        Service.fetchMessages(user: userModel) { messages, error in
+            if error != nil {
+                print(error!.localizedDescription) // hata mesaji eklenecek
+            }else {
+                if let messages = messages {
+                    self.messages = messages
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }
