@@ -65,6 +65,36 @@ struct Service {
             }
         }
     }
+    
+    static func fetchLastUsers(compeltion: @escaping([LastUser]?, AppError?) -> Void){
+        var lastUsers: [LastUser] = []
+        guard let uid = Auth.auth().currentUser?.uid else {
+            compeltion(nil, .firestoreError)
+            return
+        }
+        let messageCollectionPath = K.FireBaseConstants.FireStoreCollections.message
+        let lastMessagesCollectionPath = K.FireBaseConstants.FireStoreCollections.lastMessages
+        
+        Firestore.firestore().collection(messageCollectionPath).document(uid).collection(lastMessagesCollectionPath).order(by: "timestamp").addSnapshotListener { snapshot, error in
+            snapshot?.documentChanges.forEach({ value in
+                let data = value.document.data()
+                let message = MessageModel(data: data)
+                self.fetchUserProfile(userID: message.toId) { user, error in
+                    if error != nil {
+                        compeltion(nil, .firestoreError)
+                    }else {
+                        if let user = user {
+                            lastUsers.append(LastUser(user: user, message: message))
+                            compeltion(lastUsers,nil)
+                        }
+                    }
+                }
+            })
+        }
+        
+    }
+    
+    
     /**
      Mesaj gönderme işlemini gerçekleştirir.
      

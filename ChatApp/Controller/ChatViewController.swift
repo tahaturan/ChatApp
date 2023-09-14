@@ -63,7 +63,7 @@ extension ChatViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.messageCell)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 60
+        tableView.estimatedRowHeight = K.Size.chatViewEstimatedRowHeight
         
         tableView.separatorStyle = .none
         tableView.allowsSelection = false

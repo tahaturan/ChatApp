@@ -21,6 +21,7 @@ struct K {
         static let messageContainerViewHeight: CGFloat = 100
         static let messageCellProfileImageWidthHeight: CGFloat = 34
         static let messageCellContainerViewWidth: CGFloat = 300
+        static let chatViewEstimatedRowHeight: CGFloat = 60
         
         struct FontSize {
             static let standart: CGFloat = 20
@@ -103,5 +104,6 @@ struct K {
     struct TableViewCellIdentifier {
         static let userCell: String = "userCell"
         static let messageCell: String = "messageCell"
+        static let homeViewCell: String = "homeViewCell"
     }
 }

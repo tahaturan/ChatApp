@@ -10,10 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
-
+    private var lastUsers: [LastUser] = []
+    
     private let newMessageView = NewMessageViewController()
     private var newMessageButton: UIBarButtonItem = UIBarButtonItem()
     private var profileButton: UIBarButtonItem = UIBarButtonItem()
+    private var tableView: UITableView = UITableView()
 
     // MARK: - Lyfecycle
 
@@ -21,8 +23,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         newMessageView.delegate = self
         authenticationStatus()
+        fetchLastUsers()
         style()
         layout()
+    }
+    //MARK: - Service
+    
+    private func fetchLastUsers() {
+        Service.fetchLastUsers { lastUser, error in
+            if error != nil {
+                print(error!.localizedDescription) // Alert eklenecek
+            }else {
+                self.lastUsers = lastUser ?? []
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -53,6 +68,12 @@ extension HomeViewController {
         view.backgroundColor = K.Colors.superSilver
         navigationItem.title = K.StringText.chats
         configureNavigationBar()
+        //TableView
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = K.Size.tableViewRowHeight
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.homeViewCell)
     }
 
     // ConfigureNavigationBar
@@ -70,6 +91,15 @@ extension HomeViewController {
 
     // Layout
     private func layout() {
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
+        ])
     }
 }
 
@@ -91,4 +121,21 @@ extension HomeViewController: NewMessageViewControllerProtocol {
         let controller = ChatViewController(user: user)
         navigationController?.pushViewController(controller, animated: true)
     }
+}
+
+
+//MARK: -UITableViewDelegate / UITableViewDataSource
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.lastUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellPath = K.TableViewCellIdentifier.homeViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellPath , for: indexPath)
+        cell.backgroundColor = .red
+        return cell
+    }
+    
+    
 }
