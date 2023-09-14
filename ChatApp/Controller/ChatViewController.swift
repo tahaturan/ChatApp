@@ -54,6 +54,7 @@ extension ChatViewController {
         tableView.delegate = self
         tableView.dataSource = self
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = userModel.name
         view.backgroundColor = K.Colors.superSilver
         configureSetupKeyboard()
         messageContainerView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,8 +127,9 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableViewCellIdentifier.messageCell, for: indexPath) as! MessageTableViewCell
-        let message = messages[indexPath.row]
-        cell.messageTextView.text = message.text
+        var message = messages[indexPath.row]
+        message.user = userModel
+        cell.message = message
         return cell
     }
     

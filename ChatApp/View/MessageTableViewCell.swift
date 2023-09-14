@@ -6,22 +6,29 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MessageTableViewCell: UITableViewCell {
     //MARK: - Properties
-    private let profileImageView:UIImageView = {
+    var messageContainerViewLeft: NSLayoutConstraint!
+    var messageContainerViewRight: NSLayoutConstraint!
+    var message: MessageModel? {
+        didSet {configure()}
+    }
+    
+    private var profileImageView:UIImageView = {
        let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .yellow
+        
         return imageView
     }()
-    private let messageContainerView: UIView = {
+    private var messageContainerView: UIView = {
        let containerView = UIView()
         containerView.backgroundColor = K.Colors.bondi
         return containerView
     }()
-     var messageTextView: UITextView = {
+     private var messageTextView: UITextView = {
        let textView = UITextView()
         textView.backgroundColor = .clear
         textView.isScrollEnabled = false
@@ -75,17 +82,41 @@ extension MessageTableViewCell {
             profileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
             //MessageContainerView
             messageContainerView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            messageContainerView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 8),
             messageContainerView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -8),
-            messageContainerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            messageContainerView.leadingAnchor.constraint(greaterThanOrEqualTo: profileImageView.trailingAnchor, constant: 8),
+            messageContainerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             //MessageTextView
             messageTextView.topAnchor.constraint(equalTo: messageContainerView.topAnchor),
             messageTextView.leadingAnchor.constraint(equalTo: messageContainerView.leadingAnchor),
             messageTextView.trailingAnchor.constraint(equalTo: messageContainerView.trailingAnchor),
             messageTextView.bottomAnchor.constraint(equalTo: messageContainerView.bottomAnchor)
-            
-        
         ])
+        self.messageContainerViewLeft = messageContainerView.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 8)
+        self.messageContainerViewLeft.isActive = false
+        self.messageContainerViewRight = messageContainerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+        self.messageContainerViewRight.isActive = false
+
+    }
+    
+    private func configure() {
+        guard let message = self.message else { return }
+        let viewModel = MessageViewModel(message: message)
+        
+        messageContainerView.backgroundColor = viewModel.backgroudColor
+        profileImageView.isHidden = viewModel.currentUserIsActive
+        profileImageView.sd_setImage(with: viewModel.profileImageViewURL)
+        
+        messageContainerViewLeft.isActive = !viewModel.currentUserIsActive
+        messageContainerViewRight.isActive = viewModel.currentUserIsActive
+     
+        
+        messageTextView.text = message.text
+        
+        if viewModel.currentUserIsActive {
+            messageContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        }else{
+            messageContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        }
         
     }
 }
