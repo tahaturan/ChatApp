@@ -27,14 +27,24 @@ class HomeViewController: UIViewController {
         style()
         layout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchLastUsers()
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        lastUsers = []
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        lastUsers = []
+    }
     //MARK: - Service
     
     private func fetchLastUsers() {
+        
         Service.fetchLastUsers { lastUser, error in
             if error != nil {
                 print(error!.localizedDescription) // Alert eklenecek
             }else {
-                self.lastUsers = lastUser ?? []
+                self.lastUsers = lastUser?.sorted(by: {$0.message.timestamp.dateValue() > $1.message.timestamp.dateValue()}) ?? []
                 self.tableView.reloadData()
             }
         }
@@ -73,7 +83,7 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = K.Size.tableViewRowHeight
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.homeViewCell)
+        tableView.register(LastUserMessageCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.homeViewCell)
     }
 
     // ConfigureNavigationBar
@@ -132,10 +142,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellPath = K.TableViewCellIdentifier.homeViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellPath , for: indexPath)
-        cell.backgroundColor = .red
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellPath , for: indexPath) as! LastUserMessageCell
+        let lastUser = lastUsers[indexPath.row]
+        cell.lastUser = lastUser
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = lastUsers[indexPath.row]
+        
+        navigationController?.pushViewController(ChatViewController(user: user.user), animated: true)
+    }
     
 }

@@ -159,6 +159,7 @@ extension ChatViewController {
                 if let messages = messages {
                     self.messages = messages
                     self.tableView.reloadData()
+                    self.tableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: true)
                 }
             }
         }

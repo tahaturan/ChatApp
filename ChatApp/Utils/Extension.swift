@@ -48,3 +48,12 @@ extension UIViewController {
     }
 
 }
+
+
+extension Date {
+    func dateFormatLastMessage() -> String {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "hh:mm a"
+        return dateFormater.string(from: self)
+    }
+}
