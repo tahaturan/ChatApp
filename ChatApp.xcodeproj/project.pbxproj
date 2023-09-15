@@ -18,6 +18,7 @@
 		5FBFD8292AB2ADCC00ECFE64 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFD8282AB2ADCC00ECFE64 /* MessageModel.swift */; };
 		5FBFD82B2AB2C7F300ECFE64 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFD82A2AB2C7F300ECFE64 /* MessageViewModel.swift */; };
 		5FBFD82F2AB3082900ECFE64 /* LastUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFD82E2AB3082900ECFE64 /* LastUserMessageCell.swift */; };
+		5FBFD8312AB3E86800ECFE64 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFD8302AB3E86800ECFE64 /* ProfileView.swift */; };
 		5FC89CF02AA2D5C500F078F8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CEF2AA2D5C500F078F8 /* Extension.swift */; };
 		5FC89CF22AA405E500F078F8 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF12AA405E500F078F8 /* AppConstants.swift */; };
 		5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */; };
@@ -57,6 +58,7 @@
 		5FBFD8282AB2ADCC00ECFE64 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		5FBFD82A2AB2C7F300ECFE64 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		5FBFD82E2AB3082900ECFE64 /* LastUserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUserMessageCell.swift; sourceTree = "<group>"; };
+		5FBFD8302AB3E86800ECFE64 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5FC89CEF2AA2D5C500F078F8 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5FC89CF12AA405E500F078F8 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5FC89CF32AA4A52900F078F8 /* AuthenticationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInputView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				5F402CD02AB148D700838254 /* ChatInputView.swift */,
 				5F402CD42AB1AD4700838254 /* MessageTableViewCell.swift */,
 				5FBFD82E2AB3082900ECFE64 /* LastUserMessageCell.swift */,
+				5FBFD8302AB3E86800ECFE64 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				5F979C302AA2CB3900F46F2B /* AppDelegate.swift in Sources */,
 				5FBFD82F2AB3082900ECFE64 /* LastUserMessageCell.swift in Sources */,
 				5FBFD82B2AB2C7F300ECFE64 /* MessageViewModel.swift in Sources */,
+				5FBFD8312AB3E86800ECFE64 /* ProfileView.swift in Sources */,
 				5FFC3B752AA815C300F8104D /* CustomAttributedButton.swift in Sources */,
 				5F402CD12AB148D700838254 /* ChatInputView.swift in Sources */,
 				5FC89CF42AA4A52900F078F8 /* AuthenticationInputView.swift in Sources */,

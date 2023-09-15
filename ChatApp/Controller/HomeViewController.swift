@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     private var profileButton: UIBarButtonItem = UIBarButtonItem()
     private var tableView: UITableView = UITableView()
 
+    private let profileView: ProfileView = ProfileView()
+    private var isProfileViewActive: Bool = false
     // MARK: - Lyfecycle
 
     override func viewDidLoad() {
@@ -84,6 +86,10 @@ extension HomeViewController {
         tableView.dataSource = self
         tableView.rowHeight = K.Size.tableViewRowHeight
         tableView.register(LastUserMessageCell.self, forCellReuseIdentifier: K.TableViewCellIdentifier.homeViewCell)
+        //ProfileView
+        profileView.translatesAutoresizingMaskIntoConstraints = false
+        profileView.layer.cornerRadius = K.Size.messageIconWithHeight
+        profileView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
     }
 
     // ConfigureNavigationBar
@@ -102,12 +108,17 @@ extension HomeViewController {
     // Layout
     private func layout() {
         view.addSubview(tableView)
-        
+        view.addSubview(profileView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            //ProfileView
+            profileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            profileView.leadingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            profileView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.6)
         
         ])
     }
@@ -121,6 +132,14 @@ extension HomeViewController {
     }
 
     @objc private func handleProfileButton() {
+        UIView.animate(withDuration: 0.5) {
+            if self.isProfileViewActive {
+                self.profileView.frame.origin.x = self.view.frame.width
+            }else{
+                self.profileView.frame.origin.x = self.view.frame.width * 0.4
+            }
+        }
+        self.isProfileViewActive.toggle()
     }
 }
 
