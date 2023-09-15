@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     private var profileButton: UIBarButtonItem = UIBarButtonItem()
     private var tableView: UITableView = UITableView()
 
-    private let profileView: ProfileView = ProfileView()
+    private var profileView: ProfileView = ProfileView()
     private var isProfileViewActive: Bool = false
     // MARK: - Lyfecycle
 
@@ -26,11 +26,19 @@ class HomeViewController: UIViewController {
         newMessageView.delegate = self
         authenticationStatus()
         fetchLastUsers()
+      
         style()
         layout()
+
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchLastUsers()
+        self.profileView = ProfileView()
+        style()
+        layout()
+        isProfileViewActive = false
+  
     }
     override func viewDidDisappear(_ animated: Bool) {
         lastUsers = []
@@ -80,6 +88,7 @@ extension HomeViewController {
         view.backgroundColor = K.Colors.superSilver
         navigationItem.title = K.StringText.chats
         configureNavigationBar()
+        profileView.delagate = self
         //TableView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
@@ -172,5 +181,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.pushViewController(ChatViewController(user: user.user), animated: true)
     }
+    
+}
+
+//MARK: - ProfileViewProtocol
+extension HomeViewController: ProfileViewProtocol {
+    func signOutProfile() {
+        
+        self.signOut()
+        profileView.endEditing(true)
+        
+    }
+    
     
 }

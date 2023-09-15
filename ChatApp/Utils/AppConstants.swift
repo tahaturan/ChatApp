@@ -22,6 +22,7 @@ struct K {
         static let messageCellProfileImageWidthHeight: CGFloat = 34
         static let messageCellContainerViewWidth: CGFloat = 300
         static let chatViewEstimatedRowHeight: CGFloat = 60
+        static let profileImageViewWidthHeight: CGFloat = 140
         
         struct FontSize {
             static let standart: CGFloat = 20
