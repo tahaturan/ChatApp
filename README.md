@@ -27,17 +27,17 @@ Bu chat uygulaması, kullanıcıların cihazlarının diline otomatik olarak uyu
 Bu özellik, kullanıcı deneyimini kişiselleştirmeye yardımcı olur ve uygulamanın daha erişilebilir olmasını sağlar.
 # Uygulama Görüntüleri
 
-<img src="Images/login.png" height="400">
-<img src="Images/register.png" height="400">
-<img src="Images/homeView.png" height="400">
-<img src="Images/newMessage.png" height="400">
-<img src="Images/profileView.png" height="400">
-<img src="Images/chatView.png" height="400">
+<img src="Images/login.png" height="600">
+<img src="Images/register.png" height="600">
+<img src="Images/homeView.png" height="600">
+<img src="Images/newMessage.png" height="600">
+<img src="Images/profileView.png" height="600">
+<img src="Images/chatView.png" height="600">
 <hr>
-<img src="Images/5.gif" height="400">
-<img src="Images/3.gif" height="400">
-<img src="Images/1.gif" height="400">
-<img src="Images/8.gif" height="400">
-<img src="Images/9.gif" height="400">
+<img src="Images/5.gif" height="600">
+<img src="Images/3.gif" height="600">
+<img src="Images/1.gif" height="600">
+<img src="Images/8.gif" height="600">
+<img src="Images/9.gif" height="600">
 
 
