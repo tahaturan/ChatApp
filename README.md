@@ -26,18 +26,18 @@ Bu chat uygulaması, kullanıcıların cihazlarının diline otomatik olarak uyu
 
 Bu özellik, kullanıcı deneyimini kişiselleştirmeye yardımcı olur ve uygulamanın daha erişilebilir olmasını sağlar.
 # Uygulama Görüntüleri
+| Login View | Register View | Home View |
+|-------------------|-------------------|-------------------|
+ <img src="Images/login.png"> | <img src="Images/register.png"> | <img src="Images/homeView.png"> |
 
-<img src="Images/login.png" height="600">
-<img src="Images/register.png" height="600">
-<img src="Images/homeView.png" height="600">
-<img src="Images/newMessage.png" height="600">
-<img src="Images/profileView.png" height="600">
-<img src="Images/chatView.png" height="600">
+| New Message | Profile View | Chat View |
+|-------------------|-------------------|-------------------|
+ <img src="Images/newMessage.png"> | <img src="Images/profileView.png"> | <img src="Images/chatView.png"> |
+
 <hr>
-<img src="Images/5.gif" height="600">
-<img src="Images/3.gif" height="600">
-<img src="Images/1.gif" height="600">
-<img src="Images/8.gif" height="600">
-<img src="Images/9.gif" height="600">
+
+| Register View | Login View | Home View | Chat View | Chat View |
+|-------------------|-------------------|-------------------|-------------------|-------------------|
+ <img src="Images/5.gif"> | <img src="Images/3.gif"> | <img src="Images/1.gif"> | <img src="Images/8.gif"> | <img src="Images/9.gif">
 
 
